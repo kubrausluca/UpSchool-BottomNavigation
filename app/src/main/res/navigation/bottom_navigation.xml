@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/anaSayfaFragment">
+
+    <fragment
+        android:id="@+id/carpmaFragment"
+        android:name="com.kubrausluca.bottomnavigation.CarpmaBottomFragment"
+        android:label="fragment_carpma"
+        tools:layout="@layout/fragment_carpma_bottom" >
+        <action
+            android:id="@+id/carpmaSonucGecis"
+            app:destination="@id/carpmaSonucFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/carpmaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carpmaSonucFragment"
+        android:name="com.kubrausluca.bottomnavigation.CarpmaSonucFragment"
+        android:label="fragment_carpma_sonuc"
+        tools:layout="@layout/fragment_carpma_sonuc" >
+        <argument
+            android:name="carpmasonuc"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/toplamaSonucFragment"
+        android:name="com.kubrausluca.bottomnavigation.ToplamaSonucFragment"
+        android:label="fragment_toplama_sonuc"
+        tools:layout="@layout/fragment_toplama_sonuc" >
+        <argument
+            android:name="toplamasonuc"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/toplamaFragment"
+        android:name="com.kubrausluca.bottomnavigation.ToplamaBottomFragment"
+        android:label="fragment_toplama"
+        tools:layout="@layout/fragment_toplama_bottom" >
+        <action
+            android:id="@+id/toplamaSonucGecis"
+            app:destination="@id/toplamaSonucFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/toplamaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anaSayfaFragment"
+        android:name="com.kubrausluca.bottomnavigation.AnaSayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/carpmaGecis"
+            app:destination="@id/carpmaFragment"
+            app:popUpTo="@id/anaSayfaFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/toplamaGecis"
+            app:destination="@id/toplamaFragment"
+            app:popUpTo="@id/anaSayfaFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
