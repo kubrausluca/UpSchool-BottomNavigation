@@ -18,8 +18,14 @@ class CarpmaBottomFragment : Fragment() {
         val tasarim = inflater.inflate(R.layout.fragment_carpma_bottom, container, false)
 
         tasarim.buttonCarpma.setOnClickListener {
-            val carpma = tasarim.textCarpma1.text.toString().toInt() * tasarim.textCarpma2.text.toString().toInt()
-            val sonuc = CarpmaBottomFragmentDirections.carpmaSonucGecis(carpma)
+            var carpmaSonucu = 0
+
+            val sayi1 = Integer.parseInt(tasarim.textCarpma1.text.toString())
+            val sayi2 = Integer.parseInt(tasarim.textCarpma2.text.toString())
+
+            carpmaSonucu = sayi1 * sayi2
+
+            val sonuc = CarpmaBottomFragmentDirections.carpmaSonucGecis(carpmaSonucu)
             Navigation.findNavController(it).navigate(sonuc)
         }
         return tasarim

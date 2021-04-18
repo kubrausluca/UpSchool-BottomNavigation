@@ -16,16 +16,12 @@ class CarpmaSonucFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+
         val tasarim = inflater.inflate(R.layout.fragment_carpma_sonuc, container, false)
-
         val bundle:CarpmaSonucFragmentArgs by navArgs()
+        val carpma = bundle.carpmasonuc.toString()
 
-        val gelenSayi = bundle.carpmasonuc.toString()
-
-        tasarim.carpmaSonuc.text = "ÇARPMA SONUÇ : $gelenSayi"
-
-        Log.e("Sonuc",gelenSayi)
-
+        tasarim.carpmaSonuc.text = "ÇARPMA SONUÇ : $carpma"
         return tasarim
     }
 }

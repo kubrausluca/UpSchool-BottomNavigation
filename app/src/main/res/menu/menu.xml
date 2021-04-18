@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/toplamaFragment"
+        android:id="@+id/toplamaBottomFragment"
         android:icon="@drawable/add_icon"
         android:title="Toplama" />
     <item
-        android:id="@+id/carpmaFragment"
+        android:id="@+id/carpmaBottomFragment"
         android:icon="@drawable/close_icon"
         android:title="Çarpma" />
 </menu>

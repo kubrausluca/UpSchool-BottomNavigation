@@ -17,8 +17,14 @@ class ToplamaBottomFragment : Fragment() {
         val tasarim = inflater.inflate(R.layout.fragment_toplama_bottom, container, false)
 
         tasarim.buttonToplama.setOnClickListener {
-            val toplam = tasarim.textSayi1.text.toString().toInt()+tasarim.textSayi2.text.toString().toInt()
-            val sonuc = ToplamaBottomFragmentDirections.toplamaSonucGecis(toplam)
+            var toplamaSonucu = 0
+
+            val sayi1 = Integer.parseInt(tasarim.textSayi1.text.toString())
+            val sayi2 = Integer.parseInt(tasarim.textSayi2.text.toString())
+
+            toplamaSonucu = sayi1 + sayi2
+
+            val sonuc = ToplamaBottomFragmentDirections.toplamaSonucGecis(toplamaSonucu)
             Navigation.findNavController(it).navigate(sonuc)
         }
         return tasarim
